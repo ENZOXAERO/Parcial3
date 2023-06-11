@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>wsIncidents</name>
+    </assembly>
+    <members>
+        <member name="M:wsIncidents.Controllers.authController.login(wsIncidents.Models.authModel)">
+            <summary>
+            Gets the token if the username and password are valid
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST v1.0/auth/login
+                {
+                    "user": "user",
+                    "pasword": "pasword"
+                }
+            </remarks>
+            <param name="model">Json structure</param>
+            <returns>Token</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.employeeController.create(wsIncidents.Models.employeeModel)">
+            <summary>
+            Method to create a new employee
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.employeeController.update(wsIncidents.Models.employeeModel)">
+            <summary>
+            Method to update an employee
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.employeeController.delete(wsIncidents.Models.employeeModel)">
+            <summary>
+            Method to delete an employee
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.employeeController.get(System.Nullable{System.Int32})">
+            <summary>
+            Method to get employee data
+            </summary>
+            <param name="code">Code</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.employeeController.getAll(System.String)">
+            <summary>
+            Method to get all employees
+            </summary>
+            <param name="search">String</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.create(wsIncidents.Models.incidentModel)">
+            <summary>
+            Method to create a new incident
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.createDetail(wsIncidents.Models.incidentDetailsModel)">
+            <summary>
+            Method to create a new incident detail
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.updateDetail(wsIncidents.Models.incidentDetailsModel)">
+            <summary>
+            Method to create a new incident detail
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.update(wsIncidents.Models.incidentModel)">
+            <summary>
+            Method to update an incident
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.delete(wsIncidents.Models.incidentModel)">
+            <summary>
+            Method to delete an incident
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.createGroup(wsIncidents.Models.groupIncidentModel)">
+            <summary>
+            Method to asign group
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.get(System.Nullable{System.Int32})">
+            <summary>
+            Method to get incident data
+            </summary>
+            <param name="code">Code</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.getDetail(System.Nullable{System.Int32})">
+            <summary>
+            Method to get incident data detail
+            </summary>
+            <param name="code">Code</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.getAll(System.Int32,System.Byte,System.String)">
+            <summary>
+            Method to get all incidents
+            </summary>
+            <param name="state"></param>
+            <param name="search"></param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.getType">
+            <summary>
+            Method to get all types
+            </summary>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.incidentController.getStates">
+            <summary>
+            Method to get all types
+            </summary>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Controllers.userController.create(wsIncidents.Models.userModel)">
+            <summary>
+            Method to create a new user
+            </summary>
+            <param name="model">Json structure</param>
+            <returns>responseModel</returns>
+        </member>
+        <member name="M:wsIncidents.Helpers.email.send(System.Int32)">
+            <summary>
+            Send email
+            </summary>
+            <param name="codinc"></param>
+            <returns></returns>
+        </member>
+        <member name="P:wsIncidents.Models.authModel.user">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:wsIncidents.Models.authModel.password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="M:wsIncidents.Repositories.authRepository.login(wsIncidents.Models.authModel)">
+            <summary>
+            Genera el token, para acceder a los metodos de los controladores
+            </summary>
+            <param name="model">Usuario y Pass, para iniciar session</param>
+            <returns>Token</returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.employeeRepository.create(wsIncidents.Models.employeeModel)">
+            <summary>
+            Create new employee
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.employeeRepository.update(wsIncidents.Models.employeeModel)">
+            <summary>
+            Update an employee
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.employeeRepository.delete(wsIncidents.Models.employeeModel)">
+            <summary>
+            Delete an employee
+            </summary>
+            <param name="model">Employee code</param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.employeeRepository.get(System.Nullable{System.Int32})">
+            <summary>
+            Get employee data by code
+            </summary>
+            <param name="code">Employee code</param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.employeeRepository.getAll(System.String)">
+            <summary>
+            Get employee data list
+            </summary>
+            <param name="search">search</param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.create(wsIncidents.Models.incidentModel)">
+            <summary>
+            Create new incident
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.createDetail(wsIncidents.Models.incidentDetailsModel)">
+            <summary>
+            Create new incident detail
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.updateDetail(wsIncidents.Models.incidentDetailsModel)">
+            <summary>
+            Create new incident detail
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.update(wsIncidents.Models.incidentModel)">
+            <summary>
+            Update an incident
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.delete(wsIncidents.Models.incidentModel)">
+            <summary>
+            Delete an incident
+            </summary>
+            <param name="model">Incident </param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.get(System.Nullable{System.Int32})">
+            <summary>
+            Get employee data by code
+            </summary>
+            <param name="code">Employee code</param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.getDetail(System.Nullable{System.Int32})">
+            <summary>
+            Get employee data by code
+            </summary>
+            <param name="code">Employee code</param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.getAll(System.Byte,System.String,System.Int32)">
+            <summary>
+            Get incident data list
+            </summary>
+            <param name="state">state</param>
+            <param name="search">search</param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.createGroup(wsIncidents.Models.groupIncidentModel)">
+            <summary>
+            Create new incident Group
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.getTypes">
+            <summary>
+            Get incident data list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.incidentRepository.getStates">
+            <summary>
+            Get incident data list
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.userRepository.create(wsIncidents.Models.userModel)">
+            <summary>
+            Create new user
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsIncidents.Repositories.userRepository.update(wsIncidents.Models.incidentModel)">
+            <summary>
+            Update an incident
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

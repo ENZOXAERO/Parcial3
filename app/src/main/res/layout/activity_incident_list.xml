@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".incident_list">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:text="Incidents"
+        android:textAlignment="center"
+        android:textColor="#1E88E5"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:id="@+id/header"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnNew"
+        android:layout_width="182dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/header"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="118dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="111dp"
+        android:layout_marginBottom="121dp"
+        android:text="New">
+
+    </Button>
+
+    <TextView
+
+        android:id="@+id/headesr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/btnNew"
+        android:layout_marginTop="-100dp"
+        android:padding="5dp"
+        android:text="Long press the name, to delete incident"
+        android:textColor="#8c8c8c"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        tools:ignore="MissingConstraints" />
+
+    <ListView
+        android:id="@+id/livIncidents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/headesr"
+        android:layout_marginTop="10dp" />
+
+
+</RelativeLayout>

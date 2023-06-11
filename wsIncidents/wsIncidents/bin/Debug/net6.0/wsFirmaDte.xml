@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>wsFirmaDte</name>
+    </assembly>
+    <members>
+        <member name="M:wsFirmaDte.Controllers.authController.login(wsFirmaDte.Models.authModel)">
+            <summary>
+            Gets the token if the username and password are valid
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST v1.0/auth/login
+                {
+                    "user": "user",
+                    "pasword": "pasword"
+                }
+            </remarks>
+            <param name="model">Json structure</param>
+            <returns>Token</returns>
+        </member>
+        <member name="M:wsFirmaDte.Controllers.signatureController.send(wsFirmaDte.Models.requestDocumentModel)">
+            <summary>
+            Sign the document, and send it to the MH
+            </summary>
+            <remarks>
+            Sample request:
+            
+                POST v1.0/documentsDTE/send
+                {
+                    "code": 1478129,
+                    "prefix": "01",
+                    "type": "A",
+                    "transmissionType": 1,
+                    "origin": "T",
+                    "codusr": 1
+                }
+            </remarks>
+            <param name="model">Json Structure</param>
+            <returns></returns>
+        </member>
+        <member name="M:wsFirmaDte.Helpers.email.send(System.String,System.String)">
+            <summary>
+            Envia el comprobante, y el json
+            </summary>
+            <param name="email"></param>
+            <param name="receivedStamp"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsFirmaDte.Helpers.helpers.jsonForClient(wsFirmaDte.Models.jsonModel,System.String)">
+            <summary>
+            Genera la structura del Json, para guardar y enviar al cliente
+            </summary>
+            <param name="model"></param>
+            <param name="receivedStamp"></param>
+            <returns>Json</returns>
+        </member>
+        <member name="M:wsFirmaDte.Helpers.helpers.writeJson(wsFirmaDte.Models.jsonModel,System.String)">
+            <summary>
+            Crear el archivo Json
+            </summary>
+            <param name="model">Estructura Json</param>
+            <param name="receivedStamp">nombre del archivo</param>
+        </member>
+        <member name="M:wsFirmaDte.Helpers.helpers.deleteFiles(System.String)">
+            <summary>
+            Elimina los archivos creados, que se enviaron adjuntos en el correo
+            </summary>
+            <param name="fileName"></param>
+        </member>
+        <member name="M:wsFirmaDte.Helpers.report.generateReport(System.String,System.String,System.String)">
+            <summary>
+            Genera el documento, segun el tipo
+            </summary>
+            <param name="reportName">Nombre del reporte</param>
+            <param name="fileName">Nombre del archivo a crear</param>
+            <param name="args">Parametros del reporte</param>
+            <returns>HttpStatusCode</returns>
+        </member>
+        <member name="M:wsFirmaDte.Helpers.report.deleteReport(System.String)">
+            <summary>
+            Elimina el documento creado
+            </summary>
+            <param name="fileName">Nombre del archivo</param>
+            <returns>HttpStatusCode</returns>
+        </member>
+        <member name="P:wsFirmaDte.Models.authModel.user">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:wsFirmaDte.Models.authModel.password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:wsFirmaDte.Models.jsonModel.coddte">
+            <summary>
+            codigo del documento guardado
+            </summary>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.authRepository.login(wsFirmaDte.Models.authModel)">
+            <summary>
+            Genera el token, para acceder a los metodos de los controladores
+            </summary>
+            <param name="model">Usuario y Pass, para iniciar session</param>
+            <returns>Token</returns>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.send(wsFirmaDte.Models.requestDocumentModel)">
+            <summary>
+            Envia a firmar el documento
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.getDteType(wsFirmaDte.Models.requestDocumentModel)">
+            <summary>
+            Obtiene el nombre del procedimiento segun el tipo de documento
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.getDte(wsFirmaDte.Models.requestDocumentModel)">
+            <summary>
+            Obtiene el Json, generado desde la base de datos.
+            </summary>
+            <param name="request">Parametros</param>
+            <returns>String con estructura Json</returns>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.saveDte(wsFirmaDte.Models.requestDocumentModel,wsFirmaDte.Models.jsonModel)">
+            <summary>
+            Guarda los datos del Json generado, y la firma
+            </summary>
+            <param name="request">Parametros</param>
+            <param name="json">Codigo del valor guardado</param>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.updateDte(wsFirmaDte.Models.receptionResponseModel,System.String)">
+            <summary>
+            Actualiza el documento segun la respuesta obtenida
+            </summary>
+            <param name="response">parametros</param>
+            <param name="result"></param>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.signDocument(wsFirmaDte.Models.requestDocumentModel)">
+            <summary>
+            Crea la firma del documento, y lo guarda en la base de datos
+            </summary>
+            <param name="request">Parametros</param>
+            <returns>Modelos con las respustas</returns>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.getLocalToken">
+            <summary>
+            Obtiene el token que esta guardado
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.getTokenAsync">
+            <summary>
+            Obtiene el token de autenticacion, para enviar los datos.
+            </summary>
+            <returns>Token</returns>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.headersSendApi(System.Net.Http.HttpClient,System.String)">
+            <summary>
+            Envia los headers a la api
+            </summary>
+            <param name="httpClient"></param>
+            <param name="token">Token actual</param>
+            <returns></returns>
+        </member>
+        <member name="M:wsFirmaDte.Repositories.signatureRepository.sendData(wsFirmaDte.Models.requestDocumentModel,wsFirmaDte.Models.jsonModel)">
+            <summary>
+            Envia el documento firmado, para ser procesado
+            </summary>
+            <param name="request"></param>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
